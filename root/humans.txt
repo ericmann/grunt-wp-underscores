@@ -12,6 +12,11 @@
 	URI:             http://eamann.com
 	Twitter:         @ericmann
 	
+	Starter Theme: Automattic
+	URI:		   http://automattic.com
+	Twitter:       @automattic
+	
 /* SITE */
 	Created:  {%= grunt.template.today("yyyy-mm-dd") %}
 	Template: https://github.com/10up/grunt-wp-theme
+	Template: https://github.com/Automattic/_s
