@@ -1,7 +1,8 @@
-# grunt-wp-theme
+# grunt-wp-underscores
 
-> Create a WordPress theme with [grunt-init][].
+> Create a WordPress theme based on [Underscores][] with [grunt-init][].
 
+[underscores]: https://github.com/automattic/_s
 [grunt-init]: http://gruntjs.com/project-scaffolding
 
 ## Installation
@@ -12,13 +13,13 @@ Once grunt-init is installed, place this template in your `~/.grunt-init/` direc
 ### Linux/Mac Users
 
 ```
-git clone git@github.com:10up/grunt-wp-theme.git ~/.grunt-init/wp-theme
+git clone git@github.com:ericmann/grunt-wp-underscores.git ~/.grunt-init/wp-underscores
 ```
 
 ### Windows Users
 
 ```
-git clone git@github.com:10up/grunt-wp-theme.git %USERPROFILE%/.grunt-init/wp-theme
+git clone git@github.com:ericmann/grunt-wp-underscores.git %USERPROFILE%/.grunt-init/wp-underscores
 ```
 
 ## Usage
@@ -26,7 +27,7 @@ git clone git@github.com:10up/grunt-wp-theme.git %USERPROFILE%/.grunt-init/wp-th
 At the command-line, cd into an empty directory, run this command and follow the prompts.
 
 ```
-grunt-init wp-theme
+grunt-init wp-underscores
 ```
 
 _Note that this template will generate files in the current directory, so be sure to change to a new directory first if you don't want to overwrite existing files._
@@ -84,6 +85,4 @@ The `/img/src` directory exists only to allow you to keep track of source files 
 
 ## Release History
 
- * 2013-05-31   v0.1.2   Fix a template renaming bug.
- * 2013-04-29   v0.1.1   Update directory structure and minified file names. Fix some naming mismatches.
- * 2013-04-26   v0.1.0   Initial public release
+ * 2013-06-08   v0.1.0   Initial public release
