@@ -1,6 +1,6 @@
 /**
- * grunt-wp-theme
- * https://github.com/10up/grunt-wp-theme
+ * grunt-wp-underscores
+ * https://github.com/ericmann/grunt-wp-underscores
  *
  * Copyright (c) 2013 Eric Mann, 10up
  * Licensed under the MIT License
@@ -9,7 +9,7 @@
 'use strict';
 
 // Basic template description
-exports.description = 'Create a WordPress theme.';
+exports.description = 'Create a WordPress theme based on Automattic\'s _s starter theme.';
 
 // Template-specific notes to be displayed before question prompts.
 exports.notes = '';
@@ -24,22 +24,17 @@ exports.warnOn = '*';
 exports.template = function( grunt, init, done ) {
 	init.process( {}, [
 		// Prompt for these values.
-		init.prompt( 'title', 'WP Theme' ),
+		init.prompt( 'title', 'WP Underscores' ),
 		{
 			name   : 'prefix',
 			message: 'PHP function prefix (alpha and underscore characters only)',
-			default: 'wptheme'
+			default: 'wpunderscores'
 		},
 		init.prompt( 'description', 'The best WordPress theme ever made!' ),
-		init.prompt( 'homepage', 'http://wordpress.org/extend/themes' ),
+		init.prompt( 'homepage', 'http://wordpress.org/themes' ),
 		init.prompt( 'author_name' ),
 		init.prompt( 'author_email' ),
 		init.prompt( 'author_url' ),
-		{
-			name: 'css_type',
-			message: 'CSS Preprocessor: Will you use "Sass", "LESS", or "none" for CSS with this project?',
-			default: 'Sass'
-		}
 	], function( err, props ) {
 		props.keywords = [];
 		props.version = '0.1.0';
@@ -67,31 +62,6 @@ exports.template = function( grunt, init, done ) {
 
 		// Files to copy and process
 		var files = init.filesToCopy( props );
-
-		switch( props.css_type.toLowerCase()[0] ) {
-			case 'l':
-				delete files[ 'assets/css/sass/' + props.js_safe_name + '.scss'];
-				delete files[ 'assets/css/src/' + props.js_safe_name + '.css' ];
-				
-				props.devDependencies["grunt-contrib-less"] = "~0.5.0";
-				props.css_type = 'less';
-				break;
-			case 'n':
-			case undefined:
-				delete files[ 'assets/css/less/' + props.js_safe_name + '.less'];
-				delete files[ 'assets/css/sass/' + props.js_safe_name + '.scss'];
-				
-				props.css_type = 'none';
-				break;
-			// SASS is the default
-			default:
-				delete files[ 'assets/css/less/' + props.js_safe_name + '.less'];
-				delete files[ 'assets/css/src/' + props.js_safe_name + '.css' ];
-				
-				props.devDependencies["grunt-contrib-sass"] = "~0.2.2";
-				props.css_type = 'sass';
-				break;
-		}
 		
 		console.log( files );
 		
